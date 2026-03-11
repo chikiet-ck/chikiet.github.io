@@ -1,0 +1,35 @@
+body {
+    font-family: 'Playfair Display', serif; 
+    margin: 0; /* Xóa viền trắng thừa của trình duyệt */
+    background-color: #f4f4f9; 
+}
+
+/* --- CSS CHO MENU --- */
+.menu-box {
+    text-align: center;       
+    background-color: #0042a5; 
+    padding: 20px 0;          
+    border-bottom: 2px solid #ddd; 
+}
+
+.menu-box a {
+    text-decoration: none;    
+    font-size: 20px;          
+    color: #ffffff;              
+    font-weight: bold;        
+    margin: 0 15px;           
+    transition: 0.3s;         
+}
+
+.menu-box a:hover {
+    color: #88c8ff;           
+}
+
+/* --- CSS CHO FOOTER --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}

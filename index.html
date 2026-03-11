@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Cá Nhân - CV</title>
+    
+    <style>
+        /* --- 1. CSS CHO MENU --- */
+        .menu-box {
+            text-align: center;       
+            background-color: #0042a5; 
+            padding: 20px 0;          
+            border-bottom: 2px solid #ddd; 
+        }
+
+        .menu-box a {
+            text-decoration: none;    
+            font-size: 20px;          
+            font-family: 'Playfair Display', serif;  
+            color: #ffffff;              
+            font-weight: bold;        
+            margin: 0 15px;           
+            transition: 0.3s;         
+        }
+
+        .menu-box a:hover {
+            color: #88c8ff;           
+        }
+
+        /* --- 2. CSS CHUNG CHO TRANG --- */
+        body {
+            font-family: 'Playfair Display', serif ; 
+            margin: 0;
+            background-color: #f4f4f9; 
+        }
+
+        /* --- 3. BỐ CỤC KHUNG CV TỔNG THỂ --- */
+        .cv-container {
+            max-width: 950px; 
+            margin: 50px auto; 
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1); 
+            overflow: hidden; /* Cắt gọn các góc bo tròn */
+        }
+
+        /* --- 4. HEADER CV (MÀU XANH) --- */
+        .cv-header {
+            background-color: #0042a5;
+            padding: 40px 30px 50px 50px; /* Padding dưới to hơn để lấy chỗ cho ảnh */
+            display: flex;
+            justify-content: center; /* Đẩy chữ sang bên phải */
+            align-items: center;
+        }
+
+        .header-text {
+            text-align: right;
+        }
+
+        .header-text h1 {
+            color: #ffffff;
+            margin: 0 0 5px 0;
+            font-size: 38px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-text h2 {
+            color: #88c8ff;
+            margin: 0;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        /* --- 5. LƯỚI GRID BÊN DƯỚI HEADER --- */
+        .cv-body {
+            display: grid;
+            grid-template-columns: 1fr 2fr; /* 1 phần trái, 2 phần phải */
+            gap: 40px; 
+            padding: 0 50px 40px 50px; /* Cách lề trái phải 50px */
+        }
+
+        /* --- 6. CỘT TRÁI & AVATAR --- */
+        .avatar-container {
+            margin-top: -110px; /* Kéo ảnh trồi lên trên header xanh 110px */
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .avatar-container img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%; 
+            border: 6px solid #ffffff; /* Viền trắng dày để tách biệt với nền xanh */
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Đổ bóng nhẹ cho ảnh nổi lên */
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+        }
+
+        /* Hộp màu xám nhạt bọc các thông tin cột trái */
+        .info-box {
+            background-color: #f8f9fa;
+            padding: 20px 25px;
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box; /* Đảm bảo padding không làm tràn khung */
+        }
+
+        .left-column ul {
+            list-style-type: none; 
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .left-column li {
+            margin-bottom: 12px;
+            font-size: 15px;
+            line-height: 1.5;
+            word-break: break-word; 
+        }
+
+        .left-column .bullet-list {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .left-column .bullet-list li {
+            margin-bottom: 8px;
+        }
+
+        /* --- 7. CỘT PHẢI --- */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 10px; /* Hạ thấp xuống một chút cho cân bằng với ảnh */
+        }
+
+        .section-title {
+            color: #0042a5;
+            border-bottom: 2px solid #0042a5;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            width: 100%;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+
+        .right-column p {
+            line-height: 1.6;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+        }
+
+        .experience-title {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .experience-date {
+            font-weight: normal;
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* --- 8. FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="menu-box">
+            <a href="index.html">Thông tin</a> 
+            <a href="duan.html">Dự án</a> 
+            <a href="kinhnghiem.html">Kinh nghiệm</a> 
+            <a href="sothich.html">Sở thích</a> 
+            <a href="themanh.html">Thế mạnh</a> 
+            <a href="sach.html">Sách</a> 
+            <a href="chungchi.html">Chứng chỉ</a> 
+            <a href="gallery.html">BST Ảnh</a>
+            <a href="baitap1.html">Bài tập 1</a>
+            <a href="baitap2.html">Bài tập 2</a>
+        </div>
+    </nav>
+
+    <main class="cv-container">
+        
+        <div class="cv-header">
+            <div class="header-text">
+                <h1>Tạ Chí Kiệt</h1>
+                <h2>Sinh viên ngành Thương mại điện tử</h2>
+            </div>
+        </div>
+
+        <div class="cv-body">
+            
+            <div class="left-column">
+                <div class="avatar-container">
+                    <img src="ảnh/avatar.jpg" alt="Ảnh đại diện Tạ Chí Kiệt">
+                </div>
+                
+                <div class="info-box">
+                    <h3 class="section-title" style="margin-top: 0;">Liên hệ</h3>
+                    <ul>
+                        <li><b>Ngày sinh:</b> 22/10/2006</li>
+                        <li><b>Địa chỉ:</b> TP. Hồ Chí Minh</li>
+                        <li><b>Email:</b> chikiet824@gmail.com</li>
+                        <li><b>SĐT:</b> 0909 044 019</li>
+                    </ul>
+
+                    <h3 class="section-title">Kỹ năng</h3>
+                    <ul class="bullet-list">
+                        <li>Phát triển Website (HTML/CSS)</li>
+                        <li>Cơ sở dữ liệu & SQL</li>
+                        <li>Digital Marketing</li>
+                        <li>Lập kế hoạch kinh doanh</li>
+                    </ul>
+
+                    <h3 class="section-title">Ngôn ngữ</h3>
+                    <ul class="bullet-list">
+                        <li>Tiếng Việt (Bản xứ)</li>
+                        <li>Tiếng Anh (Giao tiếp cơ bản)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right-column">
+                
+                <h3 class="section-title" style="margin-top: 0;">Giới thiệu bản thân</h3>
+                <p>Tôi là sinh viên ngành TMĐT, đam mê với nghệ thuật và kinh tế thị trường. Tôi luôn mong muốn được học hỏi, áp dụng các kiến thức đã học về công nghệ web và marketing vào thực tế để mang lại giá trị cho tổ chức cũng như phát triển bản thân.</p>
+
+                <h3 class="section-title">Kinh nghiệm & Dự án</h3>
+                
+                <div class="experience-item">
+                    <div class="experience-title">
+                        <span>Dự án Website Hecipe</span>
+                        <span class="experience-date">03/2026</span>
+                    </div>
+                    <p>- Tham gia phát triển website cung cấp thực đơn dinh dưỡng.<br>
+                       - Lên ý tưởng cấu trúc cơ sở dữ liệu và thiết kế giao diện header.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-title">
+                        <span>Dự án Chillout Hub</span>
+                        <span class="experience-date">12/2025</span>
+                    </div>
+                    <p>- Xây dựng mô hình kinh doanh cho tổ hợp giải trí đa khu vực.<br>
+                       - Lập bản thiết kế mặt bằng và phân tích tệp khách hàng mục tiêu.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-title">
+                        <span>Thương hiệu Tiny Tags</span>
+                        <span class="experience-date">10/2025 - Hiện tại</span>
+                    </div>
+                    <p>- Thiết kế poster và sơ đồ kinh doanh cho thương hiệu kinh doanh móc khóa.</p>
+                </div>
+
+                <h3 class="section-title">Học vấn</h3>
+                
+                <div class="experience-item">
+                    <div class="experience-title">
+                        <span>Cử nhân Thương mại điện tử</span>
+                        <span class="experience-date">2024 - Hiện tại</span>
+                    </div>
+                    <p>- <b>Các môn học tiêu biểu:</b> Phát triển ứng dụng Web, Quản trị mạng, Digital Marketing, Kinh tế vi mô.</p>
+                </div>
+            </div>
+
+        </div> </main>
+
+    <footer>
+        <p>Portfolio của Tạ Chí Kiệt &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
